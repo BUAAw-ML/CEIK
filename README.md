@@ -250,7 +250,7 @@ python main.py ../configs/RAVQA.jsonnet  \
 
 ## Notes
 
-+ The VQA model adopted in this project is T5, and there are many more powerful models that can be applied to the VQA task recently. The method proposed in this project can be directly applied to the latest model to achieve better performance. 
++ The VQA model adopted in this project is T5, and there are many more powerful models that can be applied to the VQA task recently. The method proposed in this project can be applied to the latest model to achieve better performance. 
 + Joint training and Pseudo Relevance Labels are often adopted for the retriever training. Pseudo Relevance Labels is based on whether the correct answer appears in the retrieved snippet, rather than whether the pre-trained model can output the correct answer after adding the retrieved snippet. This project proposes a better retriever training method in the joint training framework. 
 + This publication version was made in a rush due to the current heavy workload of the author. We will add follow-up patches to make codes more readible and ensure reproducibility.
 
