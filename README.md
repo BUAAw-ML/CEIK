@@ -1,3 +1,8 @@
+## Overview
+
+To improve the reliability and prediction performance of pre-trained model, related works retrieve the external explicit knowledge to help produce answers. This project works on better retrieval and exploitation of external explicit knowledge in VQA. 
+
+
 ## Requirements: 
 
 torch,
@@ -24,7 +29,7 @@ sentencepiece
 
 ## Download Datasets
 
-You can use the following information to prepare the OK-VQA dataset and run the code. You can also download other datasets and place it at './data'.
+You can prepare the OK-VQA dataset as follows:
 
 ### COCO images
 `data/ok-vqa/train2014`: [Train images](http://images.cocodataset.org/zips/train2014.zip)
@@ -46,7 +51,7 @@ You can use the following information to prepare the OK-VQA dataset and run the 
 Data can be saved to `data/ok-vqa/pre-extracted_features/passages/okvqa_full_corpus.csv`.
 
 
-
+You can also download other datasets and place it at './data'
 
 ## Feature Extraction
 ### VinVL Features (object detection/attributes/relations)
@@ -242,20 +247,16 @@ python main.py ../configs/RAVQA.jsonnet  \
 ```
 
 
-## Publication
-```
-@article{wang2024coordinating,
-  title={Coordinating explicit and implicit knowledge for knowledge-based VQA},
-  author={Wang, Qunbo and Liu, Jing and Wu, Wenjun},
-  journal={Pattern Recognition},
-  pages={110368},
-  year={2024},
-  publisher={Elsevier}
-}
-```
+
+## Notes
+
++ The VQA model adopted in this project is T5, and there are many more powerful models that can be applied to the VQA task recently. The method proposed in this project can be directly applied to the latest model to achieve better performance. 
++ Joint training and Pseudo Relevance Labels are often adopted for the retriever training. Pseudo Relevance Labels is based on whether the correct answer appears in the retrieved snippet, rather than whether the pre-trained model can output the correct answer after adding the retrieved snippet. This project proposes a better retriever training method in the joint training framework. 
++ This publication version was made in a rush due to the current heavy workload of the author. We will add follow-up patches to make codes more readible and ensure reproducibility.
+
 
 ## Citation
-If this code helped your research, please kindly cite the paper 'Coordinating explicit and implicit knowledge for knowledge-based VQA' and 'Retrieval Augmented Visual Question Answering with Outside Knowledge'. This publication version was made in a rush due to the current heavy workload of the author. We will add follow-up patches to make codes more readible and ensure reproducibility. And we would like to thank the related works that helped us.
+If this code helped your research, please kindly cite the paper 'Coordinating explicit and implicit knowledge for knowledge-based VQA' and 'Retrieval Augmented Visual Question Answering with Outside Knowledge'. In addition, we would like to thank the related works that helped this project.
 
 
 
